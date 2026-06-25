@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赏金女王 · 稳定入口与使用说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fbfbf9;
+      color: #2d2d2d;
+      font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+      line-height: 1.8;
+      padding: 2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* header / hero 极简 */
+    .hero {
+      margin-top: 1.8rem;
+      margin-bottom: 2.6rem;
+      border-bottom: 1px solid #e2e2e0;
+      padding-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #1f1f1e;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero .sub {
+      font-size: 0.95rem;
+      color: #7a7a78;
+      font-style: italic;
+      border-left: 3px solid #c9a96e;
+      padding-left: 1rem;
+      margin-top: 0.3rem;
+    }
+
+    /* 文章标题区（导语） */
+    .article-header {
+      margin-bottom: 2rem;
+    }
+
+    .article-header .label {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #a09f9b;
+      border: 1px solid #d9d7d2;
+      padding: 0.15rem 0.7rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+
+    .article-header h2 {
+      font-size: 1.6rem;
+      font-weight: 450;
+      line-height: 1.3;
+      color: #242322;
+      margin-bottom: 0.7rem;
+    }
+
+    .article-header .lead {
+      font-size: 1.05rem;
+      color: #4f4e4b;
+      border-left: 4px solid #c9a96e;
+      padding-left: 1.2rem;
+      background: #f6f5f2;
+      padding: 0.8rem 1.2rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    /* 正文段落 */
+    .content p {
+      margin-bottom: 1.4rem;
+      font-size: 1rem;
+      color: #363533;
+    }
+
+    .content p strong {
+      font-weight: 600;
+      color: #1f1f1e;
+    }
+
+    .content a {
+      color: #8a6e3b;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #d4c3a0;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+
+    .content a:hover {
+      color: #4f3e22;
+      text-decoration-color: #8a6e3b;
+    }
+
+    /* 引用提示块 */
+    .quote-note {
+      background: #f3f1ec;
+      padding: 1.4rem 1.6rem;
+      margin: 1.8rem 0;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: #3f3e3a;
+      border: 1px solid #e1ddd5;
+    }
+
+    .quote-note .icon {
+      font-size: 0.85rem;
+      color: #b09a74;
+      display: block;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.05em;
+    }
+
+    .quote-note blockquote {
+      font-style: italic;
+      border-left: 3px solid #c9a96e;
+      padding-left: 1.1rem;
+      margin: 0.6rem 0 0.2rem 0;
+      color: #3c3b37;
+    }
+
+    /* 访问句（自然嵌入链接） */
+    .visit-sentence {
+      margin: 2.2rem 0 1.6rem 0;
+      padding: 1.2rem 0;
+      border-top: 1px dashed #d6d3cc;
+      border-bottom: 1px dashed #d6d3cc;
+      font-size: 1.05rem;
+    }
+
+    /* 列表 */
+    .feature-list {
+      list-style: none;
+      margin: 1.2rem 0 1.8rem 0;
+    }
+
+    .feature-list li {
+      padding: 0.5rem 0 0.5rem 1.8rem;
+      position: relative;
+      border-bottom: 1px solid #efede8;
+    }
+
+    .feature-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #b8aa8e;
+      font-weight: 300;
+    }
+
+    /* 脚注 */
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.2rem;
+      font-size: 0.85rem;
+      color: #8d8b86;
+      border-top: 1px solid #eae8e2;
+      text-align: center;
+    }
+
+    .footer-note span {
+      display: inline-block;
+      margin: 0 0.4rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 500px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .article-header h2 {
+        font-size: 1.3rem;
+      }
+      .content p {
+        font-size: 0.96rem;
+      }
+      .quote-note {
+        padding: 1rem 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+      <h1>赏金女王</h1>
+      <div class="sub">稳定入口 · 页面说明 · 日常使用指引</div>
+    </div>
+
+    <!-- 文章标题+导语 -->
+    <div class="article-header">
+      <span class="label">使用笔记</span>
+      <h2>从找到入口到顺畅浏览</h2>
+      <div class="lead">
+        无论你是初次接触还是长期使用者，一个可靠的访问路径和清晰的功能认知，能让整个体验更加从容。本文围绕页面结构、访问方式以及常见疑问展开，帮助读者建立对 <strong>赏金女王</strong> 的基本理解。
+      </div>
+    </div>
+
+    <!-- 正文多段 -->
+    <div class="content">
+
+      <p>
+        在众多信息型页面中，最基础也最容易被忽略的往往是“如何稳定地找到它”。对于日常需要浏览 <strong>赏金女王</strong> 相关内容的用户，一个直接且固定的访问地址能省去反复搜索的麻烦。正因如此，我们始终建议将主域名作为第一入口，并以此为基础了解页面的整体布局与模块划分。
+      </p>
+
+      <p>
+        从功能上看，页面的核心价值在于内容聚合与信息导航。不同于复杂的应用平台，<a href="https://cn-bountyofqueen.com">赏金女王</a> 更倾向于以清晰的文章列表、分类标签以及关键提示来引导阅读。每个模块都围绕特定主题展开，段落之间保持自然的过渡，避免信息过载。如果你习惯深度阅读，会发现这种结构很适合逐段消化。
+      </p>
+
+      <p>
+        针对新用户，我们整理了几个实用要点：第一，页面顶部区域通常展示当前最重要的更新或导读，可以快速了解近期动态；第二，正文部分采用窄栏排版，每一段都经过精简，重点内容会以加粗或引用形式突出；第三，页面底部会保留常见问题的摘要索引，方便直接跳转。掌握这些之后，浏览效率会明显提高。
+      </p>
+
+      <!-- 引用提示 -->
+      <div class="quote-note">
+        <span class="icon">📌 提示</span>
+        <blockquote>
+          如果你在访问过程中遇到加载缓慢或页面样式异常，建议先清除浏览器缓存或更换网络环境。域名始终不变，稳定的入口是获得一致体验的前提。
+        </blockquote>
+      </div>
+
+      <p>
+        另外值得一提的是，内容的呈现方式始终以实用为优先。没有多余的弹窗或强制跳转，每个链接都自然地嵌入在句子中，例如上面提到的 <a href="https://cn-bountyofqueen.com">赏金女王</a> 就是其中一个例子。这种设计意在让读者专注于阅读本身，而不被频繁的交互打断。
+      </p>
+
+      <!-- 特点/场景列表 -->
+      <ul class="feature-list">
+        <li><strong>访问稳定</strong> — 主域名长期有效，无需频繁更换地址</li>
+        <li><strong>结构清晰</strong> — 每个页面都包含明确的标题层级与导航线索</li>
+        <li><strong>信息克制</strong> — 不堆砌无关内容，每段话都有实际用意</li>
+        <li><strong>引用辅助</strong> — 关键提示以引用块单独呈现，便于回顾</li>
+      </ul>
+
+      <p>
+        最后，对于希望深入了解某个话题的读者，页面内提供的交叉引用和摘要索引可以作为延伸阅读的起点。始终保持对信息来源的审视，并结合自身需求筛选内容，是高效使用任何页面的基本素养。我们相信，一个设计克制的页面加上一个稳定的入口，已经能够满足绝大多数人的日常需要。
+      </p>
+
+    </div>
+
+    <!-- 访问句（自然嵌入链接） -->
+    <div class="visit-sentence">
+      如果你尚未确定具体的浏览起点，可以直接通过 <a href="https://cn-bountyofqueen.com">赏金女王</a> 这一地址进入，页面整体布局与本文描述一致，可以对照参考。
+    </div>
+
+    <!-- FAQ 摘要 (极简) -->
+    <div style="margin: 2rem 0 1rem 0;">
+      <h3 style="font-weight: 450; font-size: 1.15rem; margin-bottom: 0.8rem; color: #2d2c29;">常见疑问摘要</h3>
+      <p style="font-size: 0.93rem; color: #4f4e4b;">
+        <strong>Q：</strong> 页面是否可以多端访问？<br>
+        <span style="color: #6f6d68;">A：</span> 可以，域名适配多数主流浏览器与设备，移动端同样支持。<br><br>
+        <strong>Q：</strong> 内容更新频率如何？<br>
+        <span style="color: #6f6d68;">A：</span> 根据主题和实际信息变动不定期更新，保持内容有效性。<br><br>
+        <strong>Q：</strong> 遇到页面显示异常怎么办？<br>
+        <span style="color: #6f6d68;">A：</span> 可先尝试刷新或清除缓存，如仍无法解决可关注后续公告。
+      </p>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+      <span>赏金女王 · 使用说明页</span>
+      <span>/</span>
+      <span>内容仅供参考</span>
+    </div>
+
+  </div>
+</body>
+</html>
